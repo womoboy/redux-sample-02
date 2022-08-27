@@ -1,16 +1,9 @@
-import { Provider } from "react-redux";
-import store from "./store";
-
-import Counter from "./components/counter/Counter";
-
 const App = () => {
-  return (
-    <Provider store={store}>
+    return (
         <div className="App">
-            <Counter />
+            <div>this is app</div>
         </div>
-    </Provider>
-  );
-};
+    )
+}
 
 export default App;
