@@ -14,13 +14,14 @@ const PostList = () => {
     }, [])
 
     return (
-        <div>
+        <div style={{padding: '1rem', backgroundColor: 'whitesmoke', margin: '1rem 0',}}>
+            <h2 style={{textAlign: 'center', backgroundColor: 'black', color: 'white', padding: '1rem', width: 'fit-content', margin: 'auto', borderRadius: '1rem'}}>The posts list</h2>
             {postFetchIsPending && <div>Loading...</div>}
             {postFetchErrorMessage && <div>{postFetchErrorMessage}</div>}
             {postList &&
                 postList.map((post) => {
                     return (
-                        <div style={{margin: 20}} key={post.id}>{post.body}</div>
+                        <div style={{margin: 20, padding: 20, backgroundColor: 'whitesmoke', borderRadius: '1rem', boxShadow: '0 0 1rem gray'}} key={post.id}>{post.body}</div>
                     )
                 })
             }
