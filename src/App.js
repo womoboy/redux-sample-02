@@ -1,7 +1,14 @@
+import PageTitle from "./components/PageTitle";
+import styles from './styles/modules/app.module.scss';
+import AppHeader from "./components/AppHeader";
+
 const App = () => {
     return (
         <div className="App">
-            <div>this is app</div>
+            <PageTitle>Todo List</PageTitle>
+            <div className={styles.app__wrapper}>
+                <AppHeader></AppHeader>
+            </div>
         </div>
     )
 }
