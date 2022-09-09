@@ -8,6 +8,15 @@ import { getClasses } from "../utils/getClasses";
 import TodoModal from "./TodoModal";
 import { useState, useEffect } from "react";
 import CheckButton from "./CheckButton";
+import { motion } from "framer-motion";
+
+const child = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+  },
+};
 
 const TodoItem = ({ todo }) => {
   const dispatch = useDispatch();
@@ -42,7 +51,7 @@ const TodoItem = ({ todo }) => {
 
   return (
     <>
-      <div className={styles.item}>
+      <motion.div className={styles.item} variants={child} >
         <div className={styles.todoDetails}>
           <CheckButton checked={checked} handleCheck={handleCheck} />
           <div className={styles.texts}>
@@ -79,7 +88,7 @@ const TodoItem = ({ todo }) => {
             <MdEdit />
           </div>
         </div>
-      </div>
+      </motion.div>
       <TodoModal
         type='update'
         todo={todo}
